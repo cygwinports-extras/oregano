@@ -1,0 +1,16 @@
+rel=86
+
+HOMEPAGE="GNOME electronic circuit designer and simulator"
+DESCRIPTION="http://oregano.gforge.lug.fi.uba.ar/"
+SRC_URI="http://gforge.lug.fi.uba.ar/frs/download.php/${rel}/${P}.tar.gz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	scons PREFIX=/usr || error "scons compile failed"
+}
+
+src_install() {
+	cd ${B}
+	scons install DESTDIR=${D}/ PREFIX=/usr RunUpdateMimeDatabase=no || error "scons install failed"
+}
