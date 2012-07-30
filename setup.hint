@@ -1,7 +1,0 @@
-category: Gnome Science
-requires: GConf2 glib2 gdk-pixbuf2 gtk2-x11 gtksourceview libart_lgpl2 libbonobo2 libcairo2 libglade2 libgnome2 libgnomecanvas2 libgnomeui2 libintl8 libxml2 pango gnucap
-sdesc: "GNOME electronic ciruit designer and simulator"
-ldesc: "Oregano lets you simulate the designed circuits. You can analyze 
-in time, in frequency, do DC sweep and Fourier Analysis. You can 
-configure several simulation options, use probe tools, edit the netlist 
-and simulate manually."

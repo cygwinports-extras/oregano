@@ -1,0 +1,19 @@
+--- origsrc/oregano/src/Makefile.am	2012-07-30 13:10:02.000000000 -0500
++++ src/oregano/src/Makefile.am	2012-07-30 13:16:54.216009300 -0500
+@@ -25,11 +25,10 @@ INCLUDES = 	\
+ 	-DOREGANO_MODELDIR=\""$(oreganodir)/models"\" \
+ 	-DOREGANO_LANGDIR=\""$(oreganodir)/language-specs"\" \
+ 	-DDATADIR=\""$(datadir)"\" \
+-	-I./sheet \
+-	-I./gplot \
+-	-I./model \
+-	-I./engines \
+-	-I. \
++	-I$(srcdir)/sheet \
++	-I$(srcdir)/gplot \
++	-I$(srcdir)/model \
++	-I$(srcdir)/engines \
+ 	$(OREGANO_CFLAGS)
+ 
+ bin_PROGRAMS = oregano
+ 

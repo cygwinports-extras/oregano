@@ -1,0 +1,23 @@
+--- origsrc/oregano/src/Makefile.am	2012-07-30 13:10:02.000000000 -0500
++++ src/oregano/src/Makefile.am	2012-07-30 13:16:54.216009300 -0500
+@@ -34,11 +34,6 @@ INCLUDES = 	\
+ 
+ bin_PROGRAMS = oregano
+ 
+-OREGANO_LIBS += gplot/libgplot.a \
+-		engines/libengines.a \
+-		model/libmodel.a \
+-		sheet/libsheet.a
+-
+ oregano_PIXMAPS = \
+ 	plot.xpm 	\
+ 	tool_wire.xpm	\
+@@ -99,4 +94,8 @@ oregano_SOURCES = 	\
+ 	oregano.h
+ 
+ oregano_LDADD = \
++	gplot/libgplot.a \
++	engines/libengines.a \
++	model/libmodel.a \
++	sheet/libsheet.a \
+ 	$(OREGANO_LIBS)
