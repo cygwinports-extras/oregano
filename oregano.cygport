@@ -2,6 +2,9 @@ GIT_URI="git://github.com/marc-lorber/oregano.git"
 GIT_TAG=v${PV}
 inherit gnome2 git
 
+NAME="oregano"
+VERSION=0.82
+RELEASE=2
 CATEGORY="Science"
 SUMMARY="GNOME electronic circuit designer and simulator"
 DESCRIPTION="oregano is an application for schematic capture and simulation of
@@ -9,9 +12,21 @@ electronic circuits. The actual simulation is performed by Berkeley
 Spice, or GNUcap or the new generation ngspice."
 HOMEPAGE="https://github.com/marc-lorber/oregano/"
 
-PATCH_URI="0.82-as-needed.patch
-           0.82-vpath.patch"
+PATCH_URI="
+	0.82-as-needed.patch
+	0.82-vpath.patch
+	0.82-deprecations.patch
+"
 
 DISTCLEANFILES="help/es/Makefile help/es/omf_timestamp help/es/*.omf.out"
 
 REQUIRES="gnucap ngspice"
+
+src_compile() {
+	cd ${S}
+	gnome2_autoreconf
+	cd ${B}
+	gnome2_configure
+	mkdir -p data/settings
+	cygmake
+}

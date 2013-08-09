@@ -1,0 +1,32 @@
+--- origsrc/oregano/src/Makefile.am	2013-08-09 03:50:07.119008800 -0500
++++ src/oregano/src/Makefile.am	2013-08-09 04:22:55.541596200 -0500
+@@ -8,7 +8,6 @@ SUBDIRS = 		\
+ 
+ AM_CFLAGS = -Wall -DG_DISABLE_DEPRECATED -DGSEAL_ENABLE \
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
+-	-DGTK_DISABLE_DEPRECATED \
+ 	-DG_DISABLE_SINGLE_INCLUDES -DGDK_PIXBUF_DISABLE_SINGLE_INCLUDES \
+ 	-DGTK_DISABLE_SINGLE_INCLUDES
+ 
+--- origsrc/oregano/src/netlist-editor.c	2013-08-09 03:49:59.000000000 -0500
++++ src/oregano/src/netlist-editor.c	2013-08-09 04:22:03.321609300 -0500
+@@ -30,6 +30,8 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <glib/gi18n.h>
++#include <glib-object.h>
++#include <gtksourceview/gtksourcebuffer.h>
+ #include <gtksourceview/gtksourcelanguagemanager.h>
+ 
+ #include "netlist-editor.h"
+--- origsrc/oregano/src/sheet/Makefile.am	2013-08-09 03:49:59.000000000 -0500
++++ src/oregano/src/sheet/Makefile.am	2013-08-09 04:19:26.961666100 -0500
+@@ -2,7 +2,7 @@ oreganodir = $(datadir)/oregano
+ 
+ AM_CFLAGS = -Wall -DG_DISABLE_DEPRECATED -DGSEAL_ENABLE \
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
+-	-DGTK_DISABLE_DEPRECATED -DG_DISABLE_SINGLE_INCLUDES \
++	-DG_DISABLE_SINGLE_INCLUDES \
+ 	-DGDK_PIXBUF_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_SINGLE_INCLUDES
+ 
+ INCLUDES = \
